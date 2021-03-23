@@ -42,13 +42,14 @@ li {
   font-size: 1rem;
 }
 
-/* header */
+/* hero-image */
 
-header {
+.hero-image {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 500px;
+  height: 80vh;
+  width: 100vw;
   background-image: url("../images/apple-pie.jpg");
   background-color: #505050;
   background-size: cover;
@@ -64,16 +65,33 @@ header {
   margin-top: 2rem;
   width: 100%;
   padding-bottom: 2rem;
-  margin-bottom: 2rem;
-  border-bottom: 1px solid #505050;
 }
 
 .image-informative {
-  width: 300px;
-  height: 50px;
+  width: 70%;
+  height: auto;
   margin: 0 auto;
 }
 
-ul li {
+.ingredients-list {
   list-style: none;
+}
+
+.ingredients-list li::before {
+  content: "- ";
+}
+
+.directions-list {
+  counter-reset: list;
+  list-style: none;
+}
+
+.directions-list li::before {
+  content: counter(list) ") ";
+  counter-increment: list;
+}
+
+hr {
+  width: 100%;
+  border-top: 1px solid #505050;
 }
